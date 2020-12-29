@@ -1,0 +1,35 @@
+$charcoal: #212121;
+$silver: #717171;
+$platinum: #e9e9e9;
+$blue: #0d324d;
+$bone: #f8f8f8;
+
+$body: 'Lato', sans-serif;
+$header: 'Rancho', cursive;
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: $bone;
+  font-family: $body;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}

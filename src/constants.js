@@ -64,7 +64,7 @@ export const GHOST_TYPES = [
 export const EVIDENCE = [
   {
     id: 1,
-    name: 'EMF Level 5',
+    name: 'EMF Level 5'
   },
   {
     id: 2,

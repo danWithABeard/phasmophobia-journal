@@ -1,5 +1,11 @@
 import React from 'react'
 import './scss/App.scss'
+import EMFIcon from './svgs/EMFIcon'
+import FingerprintsIcon from './svgs/FingerprintsIcon'
+import FreezingTempsIcon from './svgs/FreezingTempsIcon'
+import GhostOrbIcon from './svgs/GhostOrbIcon'
+import GhostWritingIcon from './svgs/GhostWritingIcon'
+import SpiritBoxIcon from './svgs/SpiritBoxIcon'
 import { EVIDENCE, GHOST_TYPES } from './constants'
 
 export default class App extends React.Component {
@@ -12,12 +18,18 @@ export default class App extends React.Component {
 
     this._addActiveEvidence = this._addActiveEvidence.bind(this)
     this._removeActiveEvidence = this._removeActiveEvidence.bind(this)
+    this.evidenceIcon = {
+      1: EMFIcon,
+      2: FingerprintsIcon,
+      3: FreezingTempsIcon,
+      4: GhostOrbIcon,
+      5: GhostWritingIcon,
+      6: SpiritBoxIcon
+    }
   }
 
   _removeActiveEvidence(evId) {
-    // console.log('_removeActiveEvidence', evId)
     let newArray = [].concat(this.state.activeEvidence)
-
     const evIds = newArray.filter( id => {
       return id !== evId
     })
@@ -60,17 +72,18 @@ export default class App extends React.Component {
     return EVIDENCE.map( button => {
       const activeEvidenceFull = this.state.activeEvidence.length >= 3
       const isActiveEvidence = this.state.activeEvidence.indexOf(button.id) !== -1
-
       const isDisabled = !isActiveEvidence && activeEvidenceFull
-
       const evidenceClasses = [
         'evidence__button',
         isActiveEvidence ? 'evidence__button--active' : ''
       ].join(' ')
 
+      let Icon = this.evidenceIcon[button.id]
+
       return (
         <button key={`evidence${button.id}`} className={evidenceClasses} type="button" disabled={isDisabled} onClick={ () => { this._handleEvidenceClick(button.id) }}>
-          { button.name }
+          <Icon />
+          <span className="screen-reader">{ button.name }</span>
         </button>
       )
     })
@@ -103,8 +116,14 @@ export default class App extends React.Component {
     }
 
     return possibleGhosts.map( ghost => {
+      const isActiveGhost = this.state.lookupGhost.id === ghost.id
+      const ghostClasses = [
+        'ghost__button',
+        isActiveGhost ? 'ghost__button--active' : ''
+      ].join(' ')
+
       return (
-        <button key={`ghosts${ghost.id}`} className="ghost__button" onClick={() => { this._handleGhostButtonClick(ghost) }}>
+        <button key={`ghosts${ghost.id}`} className={ ghostClasses } onClick={() => { this._handleGhostButtonClick(ghost) }}>
           { ghost.name }
         </button>
       )
@@ -134,15 +153,18 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h2>Evidence</h2>
         <div className="evidence__wrapper">
           { this._renderEvidenceButtons() }
         </div>
         { this.state.lookupGhost && this._renderGhostDetails() }
+        <h2>Possible Ghosts</h2>
         <div className="ghost__wrapper">
           { this._renderPossibleGhosts() }
         </div>
         <footer>
-          Ghost Journal Companion App
+          <h1>Ghost Journal Companion App</h1>
+          <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
         </footer>
       </div>
     )

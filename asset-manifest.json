@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa03a990.chunk.css",
-    "main.js": "/static/js/main.f7584114.chunk.js",
-    "main.js.map": "/static/js/main.f7584114.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.bacf21ff.js",
-    "runtime-main.js.map": "/static/js/runtime-main.bacf21ff.js.map",
-    "static/js/2.de57b602.chunk.js": "/static/js/2.de57b602.chunk.js",
-    "static/js/2.de57b602.chunk.js.map": "/static/js/2.de57b602.chunk.js.map",
-    "static/js/3.0fe2600a.chunk.js": "/static/js/3.0fe2600a.chunk.js",
-    "static/js/3.0fe2600a.chunk.js.map": "/static/js/3.0fe2600a.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.fa03a990.chunk.css.map": "/static/css/main.fa03a990.chunk.css.map",
-    "static/js/2.de57b602.chunk.js.LICENSE.txt": "/static/js/2.de57b602.chunk.js.LICENSE.txt"
+    "main.css": "/phasmophobia-journal/static/css/main.fa03a990.chunk.css",
+    "main.js": "/phasmophobia-journal/static/js/main.f7584114.chunk.js",
+    "main.js.map": "/phasmophobia-journal/static/js/main.f7584114.chunk.js.map",
+    "runtime-main.js": "/phasmophobia-journal/static/js/runtime-main.9819ede0.js",
+    "runtime-main.js.map": "/phasmophobia-journal/static/js/runtime-main.9819ede0.js.map",
+    "static/js/2.de57b602.chunk.js": "/phasmophobia-journal/static/js/2.de57b602.chunk.js",
+    "static/js/2.de57b602.chunk.js.map": "/phasmophobia-journal/static/js/2.de57b602.chunk.js.map",
+    "static/js/3.0fe2600a.chunk.js": "/phasmophobia-journal/static/js/3.0fe2600a.chunk.js",
+    "static/js/3.0fe2600a.chunk.js.map": "/phasmophobia-journal/static/js/3.0fe2600a.chunk.js.map",
+    "index.html": "/phasmophobia-journal/index.html",
+    "static/css/main.fa03a990.chunk.css.map": "/phasmophobia-journal/static/css/main.fa03a990.chunk.css.map",
+    "static/js/2.de57b602.chunk.js.LICENSE.txt": "/phasmophobia-journal/static/js/2.de57b602.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bacf21ff.js",
+    "static/js/runtime-main.9819ede0.js",
     "static/js/2.de57b602.chunk.js",
     "static/css/main.fa03a990.chunk.css",
     "static/js/main.f7584114.chunk.js"

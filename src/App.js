@@ -123,6 +123,7 @@ export default class App extends React.Component {
             const item = EVIDENCE.find( element => { return element.id === evidenceId })
 
             if (item) return <li>{item.name}</li>
+            return null
           })
         }
         </ul>

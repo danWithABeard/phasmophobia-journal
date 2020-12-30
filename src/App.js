@@ -112,7 +112,7 @@ export default class App extends React.Component {
     }
 
     if (possibleGhosts.length <= 0) {
-      return <div className="ghost">Something is wrong. Double check your evidence again...</div>
+      return <div className="ghost">Something is wrong. Check your evidence again...</div>
     }
 
     return possibleGhosts.map( ghost => {
@@ -165,6 +165,7 @@ export default class App extends React.Component {
         <footer>
           <h1>Ghost Journal Companion App</h1>
           <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
+          <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
         </footer>
       </div>
     )

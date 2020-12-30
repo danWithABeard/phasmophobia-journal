@@ -11,6 +11,30 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+
+  &--light {
+    background-color: $bone;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $charcoal;
+    }
+
+    footer h1 {
+      color: $bone;
+    }
+  }
+
+  &--dark {
+    background-color: $charcoal;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $bone;
+    }
+
+    footer h1 {
+      color: $bone;
+    }
+  }
 }
 
 .journal__wrapper {

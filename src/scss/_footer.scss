@@ -1,6 +1,9 @@
 footer {
-  background-color: black;
+  align-items: center;
+  background-color: $charcoal;
   color: white;
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
   padding: 30px 0;
   text-align: center;
@@ -10,5 +13,18 @@ footer {
     font-family: $body;
     text-decoration: none;
     color: $platinum;
+  }
+}
+
+.button__dark-mode {
+  padding: 15px;
+  border: 0;
+  background-color: $charcoal;
+  color: $bone;
+  box-shadow: 0 0 0 1px $bone;
+  margin: 20px 0;
+
+  &:focus {
+    outline: 0;
   }
 }

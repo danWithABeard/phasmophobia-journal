@@ -2,8 +2,6 @@
   width: 100%;
   padding: 15px;
   text-align: center;
-  border-top: 1px dotted $charcoal;
-  border-bottom: 1px dotted $charcoal;
 
   h2 {
     font-family: $header;
@@ -16,5 +14,17 @@
 
   li {
     margin: 5px 0;
+  }
+
+  &--light {
+    border-top: 1px dotted $charcoal;
+    border-bottom: 1px dotted $charcoal;
+    color: $charcoal;
+  }
+
+  &--dark {
+    border-top: 1px dotted $bone;
+    border-bottom: 1px dotted $bone;
+    color: $bone;
   }
 }

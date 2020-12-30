@@ -13,6 +13,7 @@ export default class App extends React.Component {
     super()
     this.state = {
       activeEvidence: [],
+      darkMode: false,
       lookupGhost: ''
     }
 
@@ -51,6 +52,10 @@ export default class App extends React.Component {
 
       this.setState({ activeEvidence: evIds })
     }
+  }
+
+  _handleDarkModeClick() {
+    this.setState({ darkMode: !this.state.darkMode })
   }
 
   _handleGhostButtonClick(ghost) {
@@ -92,6 +97,7 @@ export default class App extends React.Component {
   _renderPossibleGhosts() {
     const { activeEvidence } = this.state
     let possibleGhosts = GHOST_TYPES
+    const darkMode = this.state.darkMode ? 'dark' : 'light'
 
     if (activeEvidence.length > 0) {
 
@@ -119,6 +125,7 @@ export default class App extends React.Component {
       const isActiveGhost = this.state.lookupGhost.id === ghost.id
       const ghostClasses = [
         'ghost__button',
+        `ghost__button--${darkMode}`,
         isActiveGhost ? 'ghost__button--active' : ''
       ].join(' ')
 
@@ -132,9 +139,10 @@ export default class App extends React.Component {
 
   _renderGhostDetails() {
     const { lookupGhost } = this.state
+    const darkMode = this.state.darkMode ? 'dark' : 'light'
 
     return (
-      <div className="ghost-details__wrapper" onClick={ () => { this.setState({ lookupGhost: '' }) }}>
+      <div className={ `ghost-details__wrapper ghost-details__wrapper--${darkMode}` } onClick={ () => { this.setState({ lookupGhost: '' }) }}>
         <h2>
           { lookupGhost.name }
         </h2>
@@ -153,8 +161,10 @@ export default class App extends React.Component {
   }
 
   render() {
+    const darkMode = this.state.darkMode ? 'dark' : 'light'
+
     return (
-      <div className="App">
+      <div className={ `App App--${darkMode}` }>
         <div className="journal__wrapper">
           <h2>Evidence</h2>
           <div className="evidence__wrapper">
@@ -169,11 +179,11 @@ export default class App extends React.Component {
           </div>
         </div>
 
-        <footer>
+        <footer className={ `footer--${darkMode}` }>
           <h1>Ghost Journal Companion App</h1>
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
           <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
-          <button type="button">Toggle Dark Mode</button>
+          <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>Toggle Dark Mode</button>
         </footer>
       </div>
     )

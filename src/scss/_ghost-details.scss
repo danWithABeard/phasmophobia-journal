@@ -2,6 +2,7 @@
   width: 100%;
   padding: 15px;
   text-align: center;
+  position: relative;
 
   h2 {
     font-family: $header;
@@ -27,4 +28,13 @@
     border-bottom: 1px dotted $bone;
     color: $bone;
   }
+}
+
+.ghost-details__close-button {
+  text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: $header;
+  font-size: 18px;
 }

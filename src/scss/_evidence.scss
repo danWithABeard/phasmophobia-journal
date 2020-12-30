@@ -9,10 +9,8 @@
 }
 
 .evidence__button {
-  background-color: $bone;
   border-radius: 50%;
   border: 0;
-  box-shadow: inset 0 0 0 1px $charcoal;
   cursor: pointer;
   font-size: 12px;
   height: 50px;
@@ -37,8 +35,26 @@
     }
   }
 
-  &--active {
-    background-color: $blue;
+  &--light {
+    background-color: $bone;
+    box-shadow: inset 0 0 0 1px $charcoal;
+
+    path {
+      fill: $charcoal;
+    }
+  }
+
+  &--dark {
+    background-color: $charcoal;
+    box-shadow: inset 0 0 0 1px $bone;
+
+    path {
+      fill: $bone;
+    }
+  }
+
+  &--light-active {
+    background-color: $charcoal;
     color: $bone;
 
     path {
@@ -50,5 +66,36 @@
         fill: $bone;
       }
     }
+  }
+
+  &--dark-active {
+    background-color: $bone;
+    color: $charcoal;
+
+    path {
+      fill: $charcoal;
+    }
+
+    &:hover {
+      path {
+        fill: $charcoal;
+      }
+    }
+  }
+}
+
+.evidence__button--light[disabled] {
+  box-shadow: inset 0 0 0 1px $platinum;
+
+  path {
+    fill: $platinum;
+  }
+}
+
+.evidence__button--dark[disabled] {
+  box-shadow: inset 0 0 0 1px $jet;
+
+  path {
+    fill: $jet;
   }
 }

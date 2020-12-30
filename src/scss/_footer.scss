@@ -9,22 +9,38 @@ footer {
   text-align: center;
   width: 100%;
 
+  span {
+    display: block;
+    font-size: 12px;
+    font-family: $body;
+    margin: 5px 0;
+  }
+
   a {
     font-family: $body;
     text-decoration: none;
     color: $platinum;
+    margin: 5px 0;
   }
 }
 
 .button__dark-mode {
-  padding: 15px;
-  border: 0;
   background-color: $charcoal;
-  color: $bone;
+  border-radius: 50%;
+  border: 0;
   box-shadow: 0 0 0 1px $bone;
+  color: $bone;
+  font-family: $body;
+  height: 50px;
   margin: 20px 0;
+  padding: 15px;
+  width: 50px;
 
   &:focus {
     outline: 0;
+  }
+
+  path {
+    fill: $bone;
   }
 }

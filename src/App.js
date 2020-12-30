@@ -5,6 +5,7 @@ import FingerprintsIcon from './svgs/FingerprintsIcon'
 import FreezingTempsIcon from './svgs/FreezingTempsIcon'
 import GhostOrbIcon from './svgs/GhostOrbIcon'
 import GhostWritingIcon from './svgs/GhostWritingIcon'
+import MoonIcon from './svgs/MoonIcon'
 import SpiritBoxIcon from './svgs/SpiritBoxIcon'
 import { EVIDENCE, GHOST_TYPES } from './constants'
 
@@ -63,7 +64,6 @@ export default class App extends React.Component {
   }
 
   _handleEvidenceClick(evId) {
-    // console.log( 'clicked evidence', evId )
     const evidenceIsCurrentlyActive = this.state.activeEvidence.indexOf(evId) !== -1
 
     if (evidenceIsCurrentlyActive) {
@@ -78,9 +78,11 @@ export default class App extends React.Component {
       const activeEvidenceFull = this.state.activeEvidence.length >= 3
       const isActiveEvidence = this.state.activeEvidence.indexOf(button.id) !== -1
       const isDisabled = !isActiveEvidence && activeEvidenceFull
+      const darkMode = this.state.darkMode ? 'dark' : 'light'
       const evidenceClasses = [
         'evidence__button',
-        isActiveEvidence ? 'evidence__button--active' : ''
+        `evidence__button--${darkMode}`,
+        isActiveEvidence ? `evidence__button--${darkMode}-active` : ''
       ].join(' ')
 
       let Icon = this.evidenceIcon[button.id]
@@ -143,14 +145,13 @@ export default class App extends React.Component {
 
     return (
       <div className={ `ghost-details__wrapper ghost-details__wrapper--${darkMode}` } onClick={ () => { this.setState({ lookupGhost: '' }) }}>
-        <h2>
-          { lookupGhost.name }
-        </h2>
+        <div className="ghost-details__close-button">x</div>
+        <h2>{ lookupGhost.name }</h2>
         <ul>
         {
-          lookupGhost.evidence.map( evidenceId => {
+          lookupGhost.evidence.map( (evidenceId, i) => {
             const item = EVIDENCE.find( element => { return element.id === evidenceId })
-            if (item) return <li>{item.name}</li>
+            if (item) return <li key={`${lookupGhost.name}${evidenceId}`}>{item.name}</li>
             return null
           })
         }
@@ -180,10 +181,14 @@ export default class App extends React.Component {
         </div>
 
         <footer className={ `footer--${darkMode}` }>
-          <h1>Ghost Journal Companion App</h1>
+          <h1>Ghost Journal Companion App <span>Updated for Phasmophobia v0.2</span></h1>
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
           <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
-          <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>Toggle Dark Mode</button>
+
+          <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>
+            <MoonIcon />
+            <span className="screen-reader">Toggle Dark Mode</span>
+          </button>
         </footer>
       </div>
     )

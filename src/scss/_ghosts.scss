@@ -4,7 +4,6 @@
   justify-content: center;
   margin-bottom: 20px;
   max-width: 500px;
-  padding: 0 15px;
   text-align: center;
   width: 100%;
 }
@@ -15,13 +14,14 @@
   padding: 20px 0;
   margin: 2px;
   width: 48%;
-  font-weight: 700;
+  font-family: $body;
   transition: box-shadow .2s, background-color .2s;
   outline: 0;
 
   &--active {
     background-color: $charcoal;
     color: $bone;
+    font-family: $header;
   }
 
   &--light {

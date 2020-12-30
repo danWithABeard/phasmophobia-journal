@@ -1,0 +1,34 @@
+.ghost__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  padding: 0 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.ghost__button {
+  border: 0;
+  cursor: pointer;
+  padding: 20px 0;
+  margin: 2px;
+  width: 48%;
+  background-color: $bone;
+  box-shadow: inset 0 0 0 1px $charcoal;
+  color: $charcoal;
+  font-weight: 700;
+  transition: box-shadow .2s, background-color .2s;
+  outline: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 3px $charcoal;
+  }
+
+  &--active {
+    background-color: $charcoal;
+    color: $bone;
+  }
+}

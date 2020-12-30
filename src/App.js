@@ -135,17 +135,19 @@ export default class App extends React.Component {
 
     return (
       <div className="ghost-details__wrapper" onClick={ () => { this.setState({ lookupGhost: '' }) }}>
-        <h2>{ lookupGhost.name }</h2>
+        <h2>
+          { lookupGhost.name }
+        </h2>
         <ul>
         {
           lookupGhost.evidence.map( evidenceId => {
             const item = EVIDENCE.find( element => { return element.id === evidenceId })
-
             if (item) return <li>{item.name}</li>
             return null
           })
         }
         </ul>
+        <div><h3>Weakness:</h3>{ lookupGhost.weakness }</div>
       </div>
     )
   }
@@ -153,19 +155,25 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>Evidence</h2>
-        <div className="evidence__wrapper">
-          { this._renderEvidenceButtons() }
+        <div className="journal__wrapper">
+          <h2>Evidence</h2>
+          <div className="evidence__wrapper">
+            { this._renderEvidenceButtons() }
+          </div>
+
+          { this.state.lookupGhost && this._renderGhostDetails() }
+
+          <h2>Possible Ghosts</h2>
+          <div className="ghost__wrapper">
+            { this._renderPossibleGhosts() }
+          </div>
         </div>
-        { this.state.lookupGhost && this._renderGhostDetails() }
-        <h2>Possible Ghosts</h2>
-        <div className="ghost__wrapper">
-          { this._renderPossibleGhosts() }
-        </div>
+
         <footer>
           <h1>Ghost Journal Companion App</h1>
-          <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
+          <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
+          <button type="button">Toggle Dark Mode</button>
         </footer>
       </div>
     )

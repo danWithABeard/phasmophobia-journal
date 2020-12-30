@@ -2,6 +2,8 @@
   width: 100%;
   padding: 15px;
   text-align: center;
+  border-top: 1px dotted $charcoal;
+  border-bottom: 1px dotted $charcoal;
 
   h2 {
     font-family: $header;

@@ -70,6 +70,12 @@ export const GHOST_TYPES = [
     name: 'Yurei',
     evidence: [3, 4, 5],
     weakness: 'Smudge Sticks in spawn rooms'
+  },
+  {
+    id: 13,
+    name: 'Hantu',
+    evidence: [2, 4, 5],
+    weakness: 'Slower in warmer rooms'
   }
 ]
 

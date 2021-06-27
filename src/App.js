@@ -181,7 +181,7 @@ export default class App extends React.Component {
         </div>
 
         <footer className={ `footer--${darkMode}` }>
-          <h1>Ghost Journal Companion App <span>Updated for Phasmophobia v0.2</span></h1>
+          <h1>Ghost Journal Companion App <span>Updated for Phasmophobia v0.29.6.1</span></h1>
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
           <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
 

@@ -30,14 +30,21 @@ footer {
   border: 0;
   box-shadow: 0 0 0 1px $bone;
   color: $bone;
+  cursor: pointer;
   font-family: $body;
   height: 50px;
   margin: 20px 0;
   padding: 15px;
+  transition: box-shadow 300ms ease-in-out;
   width: 50px;
 
   &:focus {
     outline: 0;
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 2px $bone;
   }
 
   path {

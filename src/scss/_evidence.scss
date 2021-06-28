@@ -38,6 +38,11 @@
     background-color: $bone;
     box-shadow: inset 0 0 0 1px $charcoal;
 
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 3px $charcoal;
+    }
+
     path {
       fill: $charcoal;
     }
@@ -49,6 +54,11 @@
 
     path {
       fill: $bone;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 3px $bone;
     }
   }
 

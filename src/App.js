@@ -174,7 +174,7 @@ export default class App extends React.Component {
 
           { this.state.lookupGhost && this._renderGhostDetails() }
 
-          <h2>Possible Ghosts</h2>
+          <h2>Ghost Types</h2>
           <div className="ghost__wrapper">
             { this._renderPossibleGhosts() }
           </div>
@@ -183,7 +183,7 @@ export default class App extends React.Component {
         <footer className={ `footer--${darkMode}` }>
           <h1>Ghost Journal Companion App <span>Updated for Phasmophobia v0.29.6.1</span></h1>
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
-          <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github</a>
+          <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github | Made with 🤍</a>
 
           <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>
             <MoonIcon />

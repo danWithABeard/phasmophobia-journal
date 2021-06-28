@@ -17,10 +17,18 @@ footer {
   }
 
   a {
-    font-family: $body;
-    text-decoration: none;
+    border-bottom: 1px solid $charcoal;
     color: $platinum;
+    font-family: $body;
     margin: 5px 0;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: border-color ease-in-out 300ms;
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid $bone;
+    }
   }
 }
 
@@ -44,7 +52,7 @@ footer {
 
   &:focus,
   &:hover {
-    box-shadow: 0 0 0 2px $bone;
+    box-shadow: 0 0 0 3px $bone;
   }
 
   path {

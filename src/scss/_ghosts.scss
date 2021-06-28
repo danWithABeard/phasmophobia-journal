@@ -11,12 +11,13 @@
 .ghost__button {
   border: 0;
   cursor: pointer;
-  padding: 20px 0;
-  margin: 2px;
-  width: 48%;
   font-family: $body;
-  transition: box-shadow .2s, background-color .2s;
+  margin: 2px;
   outline: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  transition: box-shadow .2s, background-color .2s;
+  width: 32%;
 
   &--active {
     background-color: $charcoal;

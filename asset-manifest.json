@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phasmophobia-journal/static/css/main.b5ba7d6c.chunk.css",
+    "main.css": "/phasmophobia-journal/static/css/main.05a34332.chunk.css",
     "main.js": "/phasmophobia-journal/static/js/main.2033b587.chunk.js",
     "main.js.map": "/phasmophobia-journal/static/js/main.2033b587.chunk.js.map",
     "runtime-main.js": "/phasmophobia-journal/static/js/runtime-main.6dcc7e3e.js",
@@ -8,13 +8,13 @@
     "static/js/2.b0be72c9.chunk.js": "/phasmophobia-journal/static/js/2.b0be72c9.chunk.js",
     "static/js/2.b0be72c9.chunk.js.map": "/phasmophobia-journal/static/js/2.b0be72c9.chunk.js.map",
     "index.html": "/phasmophobia-journal/index.html",
-    "static/css/main.b5ba7d6c.chunk.css.map": "/phasmophobia-journal/static/css/main.b5ba7d6c.chunk.css.map",
+    "static/css/main.05a34332.chunk.css.map": "/phasmophobia-journal/static/css/main.05a34332.chunk.css.map",
     "static/js/2.b0be72c9.chunk.js.LICENSE.txt": "/phasmophobia-journal/static/js/2.b0be72c9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6dcc7e3e.js",
     "static/js/2.b0be72c9.chunk.js",
-    "static/css/main.b5ba7d6c.chunk.css",
+    "static/css/main.05a34332.chunk.css",
     "static/js/main.2033b587.chunk.js"
   ]
 }

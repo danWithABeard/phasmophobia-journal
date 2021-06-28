@@ -98,7 +98,7 @@ export default class App extends React.Component {
 
   _renderPossibleGhosts() {
     const { activeEvidence } = this.state
-    let possibleGhosts = GHOST_TYPES
+    let possibleGhosts = GHOST_TYPES.sort((ghost1, ghost2) => ghost1.name.localeCompare(ghost2.name))
     const darkMode = this.state.darkMode ? 'dark' : 'light'
 
     if (activeEvidence.length > 0) {

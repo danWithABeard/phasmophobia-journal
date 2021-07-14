@@ -4,10 +4,10 @@ import EMFIcon from './svgs/EMFIcon'
 import FingerprintsIcon from './svgs/FingerprintsIcon'
 import FreezingTempsIcon from './svgs/FreezingTempsIcon'
 import GhostOrbIcon from './svgs/GhostOrbIcon'
-import ResetIcon from './svgs/ResetIcon'
 import GhostWritingIcon from './svgs/GhostWritingIcon'
 import MoonIcon from './svgs/MoonIcon'
 import SpiritBoxIcon from './svgs/SpiritBoxIcon'
+import ResetButton from './ResetButton'
 import { EVIDENCE, GHOST_TYPES } from './constants'
 
 export default class App extends React.Component {
@@ -30,6 +30,8 @@ export default class App extends React.Component {
       5: GhostWritingIcon,
       6: SpiritBoxIcon
     }
+
+    this._handleReset = this._handleReset.bind(this)
   }
 
   _removeActiveEvidence(evId) {
@@ -120,12 +122,18 @@ export default class App extends React.Component {
 
         /** Remove ghost from list of possible culprits */
         if (notThisGhost) return false
+
         return true
       })
     }
 
     if (possibleGhosts.length <= 0) {
-      return <div className="ghost">Something is wrong. Check your evidence again...</div>
+      return (
+        <>
+          <div className={`ghost__error ghost__error--${darkMode}`}>Something is wrong. Check your evidence again...</div>
+          <ResetButton handleReset={this._handleReset} />
+        </>
+      )
     }
 
     return possibleGhosts.map( ghost => {
@@ -173,6 +181,7 @@ export default class App extends React.Component {
       <div className={ `App App--${darkMode}` }>
         <div className="journal__wrapper">
           <h2>Evidence</h2>
+
           <div className="evidence__wrapper">
             { this._renderEvidenceButtons() }
           </div>
@@ -196,10 +205,7 @@ export default class App extends React.Component {
               <span className="screen-reader">Toggle Dark Mode</span>
             </button>
 
-            <button className="button__dark-mode" type="button" onClick={() => { this._handleReset() }}>
-              <ResetIcon />
-              <span className="screen-reader">Reset evidence</span>
-            </button>
+            <ResetButton handleReset={this._handleReset} />
           </div>
         </footer>
       </div>

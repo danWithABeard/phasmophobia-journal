@@ -11,6 +11,10 @@ This is a WIP fan-made project to play Phasmophobia with my mates. We've loved e
 
 Built with a mobile-first user experience in mind as I do not have a second monitor on my gaming computer. Instead, I use my iPhone while playing.
 
+## Completed Features
+
+- Reset Evidence for multiple contracts
+
 ## Incoming Features
 
 - Evidence labels

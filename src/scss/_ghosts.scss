@@ -8,21 +8,30 @@
   width: 100%;
 }
 
+.ghost__error {
+  &--dark {
+    color: $bone;
+  }
+
+  &--light {
+    color: $charcoal;
+  }
+}
+
 .ghost__button {
   border: 0;
   cursor: pointer;
-  font-family: $body;
+  font-family: $header;
   margin: 2px;
   outline: 0;
   padding: 20px 0;
-  font-size: 16px;
+  font-size: 18px;
   transition: box-shadow .2s, background-color .2s;
   width: 32%;
 
   &--active {
     background-color: $charcoal;
     color: $bone;
-    font-family: $header;
   }
 
   &--light {

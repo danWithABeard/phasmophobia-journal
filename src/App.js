@@ -4,6 +4,7 @@ import EMFIcon from './svgs/EMFIcon'
 import FingerprintsIcon from './svgs/FingerprintsIcon'
 import FreezingTempsIcon from './svgs/FreezingTempsIcon'
 import GhostOrbIcon from './svgs/GhostOrbIcon'
+import ResetIcon from './svgs/ResetIcon'
 import GhostWritingIcon from './svgs/GhostWritingIcon'
 import MoonIcon from './svgs/MoonIcon'
 import SpiritBoxIcon from './svgs/SpiritBoxIcon'
@@ -20,6 +21,7 @@ export default class App extends React.Component {
 
     this._addActiveEvidence = this._addActiveEvidence.bind(this)
     this._removeActiveEvidence = this._removeActiveEvidence.bind(this)
+
     this.evidenceIcon = {
       1: EMFIcon,
       2: FingerprintsIcon,
@@ -53,6 +55,10 @@ export default class App extends React.Component {
 
       this.setState({ activeEvidence: evIds })
     }
+  }
+
+  _handleReset() {
+    this.setState({ activeEvidence: [] })
   }
 
   _handleDarkModeClick() {
@@ -102,7 +108,6 @@ export default class App extends React.Component {
     const darkMode = this.state.darkMode ? 'dark' : 'light'
 
     if (activeEvidence.length > 0) {
-
       possibleGhosts = GHOST_TYPES.filter( ghost => {
         let notThisGhost = false
 
@@ -148,13 +153,13 @@ export default class App extends React.Component {
         <div className="ghost-details__close-button">x</div>
         <h2>{ lookupGhost.name }</h2>
         <ul>
-        {
-          lookupGhost.evidence.map( (evidenceId, i) => {
-            const item = EVIDENCE.find( element => { return element.id === evidenceId })
-            if (item) return <li key={`${lookupGhost.name}${evidenceId}`}>{item.name}</li>
-            return null
-          })
-        }
+          {
+            lookupGhost.evidence.map( (evidenceId, i) => {
+              const item = EVIDENCE.find( element => { return element.id === evidenceId })
+              if (item) return <li key={`${lookupGhost.name}${evidenceId}`}>{item.name}</li>
+              return null
+            })
+          }
         </ul>
         <div><h3>Weakness:</h3>{ lookupGhost.weakness }</div>
       </div>
@@ -185,10 +190,17 @@ export default class App extends React.Component {
           <a href="https://store.steampowered.com/app/739630/Phasmophobia/">Buy Phasmophobia</a>
           <a href="https://github.com/danWithABeard/phasmophobia-journal" title="Github">Github | Made with 🤍</a>
 
-          <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>
-            <MoonIcon />
-            <span className="screen-reader">Toggle Dark Mode</span>
-          </button>
+          <div className='button__wrapper'>
+            <button className="button__dark-mode" type="button" onClick={() => { this._handleDarkModeClick() }}>
+              <MoonIcon />
+              <span className="screen-reader">Toggle Dark Mode</span>
+            </button>
+
+            <button className="button__dark-mode" type="button" onClick={() => { this._handleReset() }}>
+              <ResetIcon />
+              <span className="screen-reader">Reset evidence</span>
+            </button>
+          </div>
         </footer>
       </div>
     )

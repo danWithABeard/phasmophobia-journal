@@ -32,6 +32,12 @@ footer {
   }
 }
 
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button__dark-mode {
   background-color: $charcoal;
   border-radius: 50%;
@@ -41,7 +47,7 @@ footer {
   cursor: pointer;
   font-family: $body;
   height: 50px;
-  margin: 20px 0;
+  margin: 20px 10px;
   padding: 15px;
   transition: box-shadow 300ms ease-in-out;
   width: 50px;
